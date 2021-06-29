@@ -1,5 +1,5 @@
 # JWT API
-API with JWT authorization
+API with JWT authentication
 ## Dependecies
 Install the dependencies
 ```
