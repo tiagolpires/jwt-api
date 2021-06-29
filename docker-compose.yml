@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    app:
+        build: .
+        command: npm start
+        container_name: jwt-api
+        ports: 
+            - "3001:3001"
+        volumes:
+            -  .:/app
+    db:
+        container_name: 'mysql-jwt'
+        image: mysql:5.7.31
+        command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+        ports: 
+            - '3306:3306'
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: my_db
+            MYSQL_USER: docker
+            MYSQL_PASSWORD: docker
